@@ -6,8 +6,10 @@ botao.addEventListener("click", (e) =>{
     e.preventDefault();
     qrCode.innerHTML = "";
 
+    botao.innerText = ""
     const texto = document.createElement("p");
     texto.innerText = "Gerando QRcode..."
+    botao.appendChild(texto)
 
 
     const img = document.createElement("img");
@@ -16,3 +18,4 @@ botao.addEventListener("click", (e) =>{
 
     console.log("mudou");
 })
+

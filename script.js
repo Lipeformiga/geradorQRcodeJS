@@ -2,7 +2,7 @@ const botao = document.getElementById("botao")
 const qrCode = document.getElementById("QRcode")
 const input = document.getElementById("input")
 
-botao.addEventListener("click", () =>{
+function gerarQrcode() {
 
     qrCode.innerHTML = "";
     const texto = document.createElement("p");
@@ -16,4 +16,13 @@ botao.addEventListener("click", () =>{
     img.addEventListener("load", () => {
         botao.innerText = "Gerar outro QRcode"
     })
+}
+
+botao.addEventListener("click", () =>{
+    gerarQrcode();
+})
+input.addEventListener("keydown", (e) =>{
+    if ( e.code === "Enter"){
+        gerarQrcode();
+    }
 })
